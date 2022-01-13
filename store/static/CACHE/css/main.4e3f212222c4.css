@@ -1,0 +1,139 @@
+/* line 3, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+.navbar {
+  background-color: #fff; }
+  /* line 5, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+  .navbar navbar-brand h3 {
+    color: #373f50; }
+  /* line 8, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+  .navbar .input-group {
+    position: relative;
+    flex: 7; }
+    /* line 11, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+    .navbar .input-group .input-icon {
+      position: absolute;
+      top: 12px;
+      right: 18px;
+      z-index: 5;
+      color: #7d879c; }
+    /* line 18, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+    .navbar .input-group .form-control {
+      padding: 20px;
+      border-radius: 4px; }
+      /* line 21, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+      .navbar .input-group .form-control:focus {
+        border-color: #ffb4b5;
+        box-shadow: none; }
+  /* line 27, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+  .navbar .navbar-img {
+    height: 25px;
+    width: 25px; }
+  /* line 32, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+  .navbar .navbar-toolbar {
+    flex: 0.25; }
+    /* line 34, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+    .navbar .navbar-toolbar .navbar-tool-icon, .navbar .navbar-toolbar a {
+      color: #4b566b; }
+    /* line 38, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+    .navbar .navbar-toolbar a:hover {
+      text-decoration: none; }
+    /* line 43, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+    .navbar .navbar-toolbar .cart-icon {
+      position: relative;
+      background-color: #f3f5f9;
+      padding: 10px 10px 6px 10px; }
+      /* line 47, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+      .navbar .navbar-toolbar .cart-icon i {
+        font-size: 18px; }
+      /* line 50, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+      .navbar .navbar-toolbar .cart-icon span {
+        position: absolute;
+        top: -4px;
+        right: -4px;
+        color: #fff;
+        background-color: #fe696a;
+        font-size: 12px;
+        padding: 0 5px; }
+  /* line 62, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+  .navbar .navbar-nav {
+    flex: 1; }
+    /* line 64, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+    .navbar .navbar-nav .nav-link {
+      padding-right: 1rem;
+      padding-left: 1rem; }
+      /* line 67, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+      .navbar .navbar-nav .nav-link a {
+        color: #4b566b;
+        font-weight: 500;
+        font-size: 17px;
+        transition: .2s; }
+        /* line 72, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+        .navbar .navbar-nav .nav-link a:hover {
+          color: #fe696a;
+          text-decoration: none; }
+
+@media (min-width: 1200px) {
+  /* line 82, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+  .container {
+    max-width: 1260px; } }
+
+/* line 87, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+.banner {
+  background-color: #F5B1B0;
+  max-height: 1230px;
+  overflow: hidden; }
+  /* line 91, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+  .banner .banner-right {
+    margin-top: 160px;
+    margin-right: 80px; }
+    /* line 94, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+    .banner .banner-right h1 {
+      font-size: 50px; }
+    /* line 97, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+    .banner .banner-right .btn-primary {
+      background-color: #fe696a;
+      border: none; }
+
+/* line 104, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+.more-info-left,
+.more-info-right {
+  flex: 1; }
+  /* line 107, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+  .more-info-left i,
+  .more-info-right i {
+    font-size: 30px; }
+  /* line 110, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+  .more-info-left h4,
+  .more-info-right h4 {
+    color: #373F50; }
+  /* line 113, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+  .more-info-left span,
+  .more-info-right span {
+    color: #8991A4; }
+
+/* line 118, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+.more-info-left {
+  background-color: #FFF1F2; }
+  /* line 120, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+  .more-info-left i {
+    color: #fe696a; }
+
+/* line 125, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+.more-info-right {
+  background-color: #EFF0FA; }
+  /* line 127, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+  .more-info-right i {
+    color: #4E54C8; }
+
+/* line 132, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+footer {
+  background-color: #373F50; }
+  /* line 134, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+  footer a {
+    color: #B1BCBB;
+    transition: .2s;
+    font-weight: 500;
+    font-size: 15px; }
+    /* line 139, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+    footer a:hover {
+      color: #fff;
+      text-decoration: none; }

@@ -18,7 +18,7 @@
     {% endcompress %}
 </head>
 <body>
-    <div class="navbar-sticky bg-light">
+    <div class="fixed-top bg-light">
         <div class="navbar navbar-expand-lg navbar-light">
             <div class="container">
                 <a href="/" class="navbar-brand mt-1">
@@ -30,7 +30,7 @@
                 </div> -->
                 <ul class="navbar-nav ml-3">
                     <li class="nav-item nav-link">
-                        <a href="/">Home</a>
+                        <a href="{% url 'shop' %}">Home</a>
                     </li>
                     <li class="nav-item nav-link">
                         <a href="/">Shop</a>
@@ -41,7 +41,7 @@
                 </ul>
                 <div class="navbar-toolbar d-flex justify-content-between">
                     <a href="/" class="navbar-tool d-flex align-items-center">
-                        <div class="navbar-tool-icon mr-2">
+                        <div class="navbar-tool-icon mr-3">
                             <!-- <img src="{% static 'store/image/default.png' %}" alt="avt" class="navbar-img rounded-circle border mr-2"> -->
                             <i class="far fa-user"></i>
                         </div>
@@ -50,7 +50,7 @@
                         </div>
                     </a>
                     <a href="/" class="navbar-tool dropdown d-flex align-items-center">
-                        <div class="navbar-tool-icon mr-2 cart-icon rounded-circle">
+                        <div class="navbar-tool-icon mr-3 cart-icon rounded-circle">
                             <i class="fas fa-shopping-cart"></i>
                             <span class="rounded-circle">4</span>
                         </div>
@@ -66,8 +66,74 @@
 
         </div> -->
     </div>
-    {% block content %}
-    {% endblock content %}
+        <main class="page-container">
+            {% block content %}
+            {% endblock content %}
+        </main>
+    <footer class="footer text-light">
+        <div class="container row m-auto py-5">
+            <div class="col">
+                <h5>Shop departments</h5>
+                <ul class="list-unstyled pt-2">
+                    <li><a href="/">Sneakers & Athletic</a></li>
+                    <li><a href="/">Athletic Apparel</a></li>
+                    <li><a href="/">Sandals</a></li>
+                    <li><a href="/">Jeans</a></li>
+                    <li><a href="/">Shorts</a></li>
+                    <li><a href="/">T-Shirts</a></li>
+                    <li><a href="/">Swimwear</a></li>
+                    <li><a href="/">Accessories</a></li>
+                    <li><a href="/">Sunglasses & Eyewear</a></li>
+                    <li><a href="/">Clogs & Mules</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <h5>Accounts & shipping info</h5>
+                <ul class="list-unstyled pt-2">
+                    <li><a href="/">Your account</a></li>
+                    <li><a href="/">Shipping rates & policies</a></li>
+                    <li><a href="/">Refunds & replacement</a></li>
+                    <li><a href="/">Order tracking</a></li>
+                    <li><a href="/">Delivery info</a></li>
+                    <li><a href="/">Taxes & fees</a></li>
+                </ul>
+                <h5 class="pt-2">About us</h5>
+                <ul class="list-unstyled pt-2">
+                    <li><a href="/">About company</a></li>
+                    <li><a href="/">Our team</a></li>
+                    <li><a href="/">Careers</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <h5 class="pb-3">Stay informed</h5>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Your email">
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="basic-addon2">Subscribe*</span>
+                    </div>
+                </div>
+                <small>*Subscribe to our newsletter to receive early discount offers, updates and new products info.</small>
+
+                <h5 class="my-4">Download our app</h5>
+                <div class="download d-flex">
+                    <a href="/" class="btn btn-primary d-flex align-items-center">
+                        <i class="fab fa-apple mr-2"></i>
+                        <div class="download-text d-flex flex-column">
+                            <span class="ml-1">Download on the</span>
+                            App Store
+                        </div>
+                    </a>
+                    <a href="/" class="btn btn-primary d-flex align-items-center ml-3">
+                        <i class="fab fa-google-play mr-2"></i>
+                        <div class="download-text d-flex flex-column">
+                            <span class="ml-1">Download on the</span>
+                            Google Play
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
     <!-- bootstrap js  -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
