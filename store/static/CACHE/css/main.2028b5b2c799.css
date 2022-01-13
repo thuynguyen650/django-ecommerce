@@ -1,0 +1,20 @@
+/* line 2, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+.navbar navbar-brand h3 {
+  color: #373f50; }
+
+/* line 5, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+.navbar .input-group {
+  position: relative; }
+  /* line 7, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+  .navbar .input-group .input-icon {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 5; }
+  /* line 14, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+  .navbar .input-group .form-control {
+    padding: 20px;
+    border-radius: 4px; }
+    /* line 17, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+    .navbar .input-group .form-control:focus {
+      border-color: red; }

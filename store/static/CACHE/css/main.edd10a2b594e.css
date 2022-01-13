@@ -1,0 +1,40 @@
+/* line 1, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+.navbar {
+  background-color: #fff; }
+  /* line 3, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+  .navbar navbar-brand h3 {
+    color: #373f50; }
+  /* line 6, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+  .navbar .input-group {
+    position: relative;
+    flex: 7; }
+    /* line 9, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+    .navbar .input-group .input-icon {
+      position: absolute;
+      top: 12px;
+      right: 18px;
+      z-index: 5;
+      color: #7d879c; }
+    /* line 16, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+    .navbar .input-group .form-control {
+      padding: 20px;
+      border-radius: 4px; }
+      /* line 19, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+      .navbar .input-group .form-control:focus {
+        border-color: #ffb4b5;
+        box-shadow: none; }
+  /* line 25, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+  .navbar .navbar-img {
+    height: 25px;
+    width: 25px; }
+  /* line 30, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+  .navbar .navbar-toolbar {
+    flex: 2.5; }
+    /* line 32, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+    .navbar .navbar-toolbar .navbar-tool-icon {
+      color: #4b566b; }
+
+@media (min-width: 1200px) {
+  /* line 39, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+  .container {
+    max-width: 1260px; } }

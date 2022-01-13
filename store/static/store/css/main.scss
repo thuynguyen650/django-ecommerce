@@ -1,0 +1,85 @@
+$primary-color: #fe696a;
+$text-color: #4b566b;
+.navbar {
+    background-color: #fff;
+    navbar-brand h3 {
+        color: rgb(55, 63, 80);
+    }
+    .input-group {
+        position: relative;
+        flex: 7;
+        .input-icon {
+            position: absolute;
+            top: 12px;
+            right: 18px;
+            z-index: 5;
+            color: #7d879c;
+        }
+        .form-control {
+            padding: 20px;
+            border-radius: 4px;
+            &:focus {
+                border-color: #ffb4b5;
+                box-shadow: none;
+            }
+        }
+    }
+    .navbar-img {
+        height: 25px;
+        width: 25px;
+    }
+
+    .navbar-toolbar {
+        flex: 0.25;
+        .navbar-tool-icon, a {
+            color: $text-color;
+        }
+        a {
+            &:hover {
+                text-decoration: none;
+                
+            }
+        }
+        .cart-icon {
+            position: relative;
+            background-color: #f3f5f9;
+            padding: 10px 10px 6px 10px;
+            i {
+                font-size: 18px;
+            }
+            span {
+                position: absolute;
+                top: -4px;
+                right: -4px;
+                color: #fff;
+                background-color: $primary-color;
+                font-size: 12px;
+                padding: 0 5px;
+            }
+        }
+    }
+
+    .navbar-nav {
+        flex: 1;
+        .nav-link {
+            padding-right: 1rem;
+            padding-left: 1rem;
+            a {
+                color: $text-color;
+                font-weight: 500;
+                font-size: 17px;
+                transition: .2s;
+                &:hover {
+                    color: $primary-color;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+    max-width: 1260px;
+}
+}

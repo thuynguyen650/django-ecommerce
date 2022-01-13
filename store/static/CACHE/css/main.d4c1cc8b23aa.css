@@ -1,0 +1,14 @@
+/* line 2, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+.navbar navbar-brand h3 {
+  color: #373f50; }
+
+/* line 5, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+.navbar .input-group {
+  position: relative; }
+  /* line 7, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+  .navbar .input-group .input-icon {
+    position: absolute;
+    right: 0;
+    z-index: 5;
+    top: 0;
+    bottom: 0; }
