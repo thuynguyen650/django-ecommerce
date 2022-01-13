@@ -1,5 +1,17 @@
 $primary-color: #fe696a;
 $text-color: #4b566b;
+$light-text-color: #8991A4;
+$bg-dark: #373F50;
+
+.light-text-color {
+    color: $light-text-color;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+// navbar 
 .navbar {
     background-color: #fff;
     navbar-brand h3 {
@@ -34,12 +46,6 @@ $text-color: #4b566b;
         .navbar-tool-icon, a {
             color: $text-color;
         }
-        a {
-            &:hover {
-                text-decoration: none;
-                
-            }
-        }
         .cart-icon {
             position: relative;
             background-color: #f3f5f9;
@@ -71,7 +77,6 @@ $text-color: #4b566b;
                 transition: .2s;
                 &:hover {
                     color: $primary-color;
-                    text-decoration: none;
                 }
             }
         }
@@ -88,7 +93,7 @@ $text-color: #4b566b;
     margin-top: 72px;
 }
 
-.banner {
+.home-banner {
     background-color: #F5B1B0;
     max-height: 1230px;
     overflow: hidden;
@@ -134,7 +139,7 @@ $text-color: #4b566b;
 }
 
 footer {
-    background-color: #373F50;
+    background-color: $bg-dark;
     a {
         color: #B1BCBB;
         transition: .2s;
@@ -142,7 +147,6 @@ footer {
         font-size: 14px;
         &:hover {
             color: #fff;
-            text-decoration: none;
         }
     }
     .form-control {
@@ -164,6 +168,44 @@ footer {
         border: none;
         &:hover {
             background-color: #232a38;
+        }
+    }
+}
+
+// shop page 
+.shop-banner {
+    background-color: $bg-dark;
+}
+
+.shop-main {
+    .product-item {
+        border: 1px solid $bg-dark;
+        border-radius: 4px;
+        overflow: hidden;
+        .btn-primary {
+            background-color: #F3F5F9;
+            border: none;
+            padding: 4px 10px;
+            top: 10px;
+            right: 28px;
+            i {
+                color: $text-color;
+            }
+        }
+        img {
+            width: 100%;
+        }
+        .product-bottom {
+            .category-link {
+                font: {
+                    weight: 500;
+                    size: 12px;
+                }
+            }
+            .product-link {
+                color: $text-color;
+                font-weight: 500;
+            }
         }
     }
 }

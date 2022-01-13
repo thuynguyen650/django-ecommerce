@@ -1,4 +1,62 @@
 {% extends 'store/base.html' %}
 {% load static %}
 {% block content %}
+    <div class="shop-banner text-light p-5">
+        <div class="container">
+            This is banner
+        </div>
+    </div>
+
+    <div class="shop-main">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-8">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="product-item">
+                                <a class="product-top">
+                                    <button class="btn btn-primary rounded-circle position-absolute">
+                                        <small><i class="far fa-heart"></i></small>
+                                    </button>
+                                    <img src="{% static 'store/image/pd1.jpg' %}" alt="pd1">
+                                </a>
+                                <div class="product-bottom d-flex flex-column px-3">
+                                    <a href="/" class="light-text-color category-link">Category 1</a>
+                                    <a href="/" class="product-link">Women Colorblock Sneakers</a>
+                                    <div class="product-span d-flex justify-content-between">
+                                        <span class="product-price">$154.00</span>
+                                        <ul class="product-star list-unstyled d-flex">
+                                            <li>
+                                                <i class="fas fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fas fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fas fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fas fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fas fa-star"></i>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>    
+                            </div>
+                        </div>
+                        <div class="col-4">Item</div>
+                        <div class="col-4">Item</div>
+                        <div class="col-4">Item</div>
+                        <div class="col-4">Item</div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    This is Categories
+                </div>
+            </div>
+        </div>
+    </div>
+
 {% endblock content %}
