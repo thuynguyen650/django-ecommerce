@@ -1,0 +1,248 @@
+/* line 6, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+.light-text-color {
+  color: #8991A4; }
+
+/* line 10, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+a:hover {
+  text-decoration: none; }
+
+/* line 14, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+.btn {
+  box-shadow: none !important; }
+
+/* line 18, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+.btn-primary {
+  background-color: #fe696a;
+  border: none; }
+  /* line 21, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+  .btn-primary:hover, .btn-primary:active {
+    background-color: #fc3e3e; }
+
+/* line 26, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+.btn-outline-primary {
+  color: #fe696a;
+  border-color: #fe696a; }
+  /* line 29, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+  .btn-outline-primary:hover, .btn-outline-primary:active {
+    background-color: #fe696a !important;
+    color: #fff;
+    border-color: #fe696a !important; }
+
+/* line 37, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+.navbar {
+  background-color: #fff; }
+  /* line 39, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+  .navbar navbar-brand h3 {
+    color: #373f50; }
+  /* line 42, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+  .navbar .input-group {
+    position: relative;
+    flex: 7; }
+    /* line 45, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+    .navbar .input-group .input-icon {
+      position: absolute;
+      top: 12px;
+      right: 18px;
+      z-index: 5;
+      color: #7d879c; }
+    /* line 52, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+    .navbar .input-group .form-control {
+      padding: 20px;
+      border-radius: 4px; }
+      /* line 55, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+      .navbar .input-group .form-control:focus {
+        border-color: #ffb4b5;
+        box-shadow: none; }
+  /* line 61, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+  .navbar .navbar-img {
+    height: 25px;
+    width: 25px; }
+  /* line 66, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+  .navbar .navbar-toolbar {
+    flex: 0.25; }
+    /* line 68, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+    .navbar .navbar-toolbar .navbar-tool-icon, .navbar .navbar-toolbar a {
+      color: #4b566b; }
+    /* line 71, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+    .navbar .navbar-toolbar .cart-icon {
+      position: relative;
+      background-color: #f3f5f9;
+      padding: 10px 10px 6px 10px; }
+      /* line 75, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+      .navbar .navbar-toolbar .cart-icon i {
+        font-size: 18px; }
+      /* line 78, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+      .navbar .navbar-toolbar .cart-icon span {
+        position: absolute;
+        top: -4px;
+        right: -4px;
+        color: #fff;
+        background-color: #fe696a;
+        font-size: 12px;
+        padding: 0 5px; }
+  /* line 90, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+  .navbar .navbar-nav {
+    flex: 1; }
+    /* line 92, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+    .navbar .navbar-nav .nav-link {
+      padding-right: 1rem;
+      padding-left: 1rem; }
+      /* line 95, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+      .navbar .navbar-nav .nav-link a {
+        color: #4b566b;
+        font-weight: 500;
+        font-size: 17px;
+        transition: .2s; }
+        /* line 100, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+        .navbar .navbar-nav .nav-link a:hover {
+          color: #fe696a; }
+
+@media (min-width: 1200px) {
+  /* line 109, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+  .container {
+    max-width: 1260px; } }
+
+/* line 114, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+.page-container {
+  margin-top: 72px; }
+
+/* line 118, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+.home-banner {
+  background-color: #F5B1B0;
+  max-height: 1230px;
+  overflow: hidden; }
+  /* line 122, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+  .home-banner .banner-right {
+    margin-top: 160px;
+    margin-right: 80px; }
+    /* line 125, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+    .home-banner .banner-right h1 {
+      font-size: 50px; }
+
+/* line 131, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+.more-info-left,
+.more-info-right {
+  flex: 1; }
+  /* line 134, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+  .more-info-left i,
+  .more-info-right i {
+    font-size: 30px; }
+  /* line 137, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+  .more-info-left h4,
+  .more-info-right h4 {
+    color: #373F50; }
+  /* line 140, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+  .more-info-left span,
+  .more-info-right span {
+    color: #8991A4; }
+
+/* line 145, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+.more-info-left {
+  background-color: #FFF1F2; }
+  /* line 147, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+  .more-info-left i {
+    color: #fe696a; }
+
+/* line 152, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+.more-info-right {
+  background-color: #EFF0FA; }
+  /* line 154, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+  .more-info-right i {
+    color: #4E54C8; }
+
+/* line 159, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+footer {
+  background-color: #373F50; }
+  /* line 161, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+  footer a {
+    color: #B1BCBB;
+    transition: .2s;
+    font-weight: 500;
+    font-size: 14px; }
+    /* line 166, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+    footer a:hover {
+      color: #fff; }
+  /* line 170, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+  footer .form-control {
+    padding: 20px; }
+    /* line 172, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+    footer .form-control:focus {
+      box-shadow: none;
+      border-color: #fe696a; }
+  /* line 177, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+  footer .download-text {
+    font-size: 15px; }
+    /* line 179, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+    footer .download-text span {
+      font-size: 10px;
+      color: #8991A4; }
+  /* line 184, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+  footer .btn {
+    background-color: #2B3445;
+    border: none; }
+    /* line 187, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+    footer .btn:hover {
+      background-color: #232a38; }
+
+/* line 194, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+.shop-banner {
+  background-color: #373F50; }
+
+/* line 199, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+.shop-main .product-item {
+  border-radius: 4px;
+  overflow: hidden; }
+  /* line 202, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+  .shop-main .product-item .product-top .btn-primary {
+    background-color: #F3F5F9;
+    padding: 4px 10px;
+    top: 10px;
+    right: 28px; }
+    /* line 207, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+    .shop-main .product-item .product-top .btn-primary i {
+      color: #4b566b; }
+  /* line 212, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+  .shop-main .product-item:hover .product-hidden {
+    display: block; }
+  /* line 216, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+  .shop-main .product-item img {
+    width: 100%;
+    cursor: pointer; }
+  /* line 221, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+  .shop-main .product-item .product-bottom .category-link {
+    font-weight: 500;
+    font-size: 12px; }
+  /* line 227, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+  .shop-main .product-item .product-bottom .product-link {
+    color: #232a38;
+    font-weight: 500; }
+  /* line 233, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+  .shop-main .product-item .product-span .fas {
+    color: #FEA569;
+    font-size: 12px; }
+    /* line 236, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+    .shop-main .product-item .product-span .fas.star-outline {
+      font-weight: 400; }
+  /* line 240, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+  .shop-main .product-item .product-span .product-price {
+    font-size: 18px;
+    color: #4E54C8; }
+  /* line 246, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+  .shop-main .product-item .product-options .btn {
+    font-size: 13px;
+    width: 30px;
+    padding: 4px; }
+    /* line 250, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+    .shop-main .product-item .product-options .btn.btn-primary {
+      padding-bottom: 6px; }
+  /* line 255, c:/users/admin/desktop/django/ecommerce/store/static/store/css/main.scss */
+  .shop-main .product-item .product-hidden {
+    bottom: -92px;
+    background-color: #fff;
+    left: 15px;
+    right: 15px;
+    z-index: 100;
+    box-shadow: 0px 10px 10px -7px #000000;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    display: none; }
