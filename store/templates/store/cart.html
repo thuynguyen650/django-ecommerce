@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col-8">
                     <ul class="list-unstyled">
-                        <li class="cart-item pb-3 row">
+                        <li class="cart-item pb-3 row border-bottom">
                             <a href="/" class="cart-img col-3">
                                 <img class="cart-img" src="{% static 'store/image/pd1.jpg' %}" alt="pd">
                             </a>
@@ -105,8 +105,15 @@
 
                 <div class="col-4">
                     <div class="sidebar rounded p-4 ml-5 mr-3 position-absolute">
-                        <h4>Categories</h4>
-                        This is sidebar
+                        <div class="cart-total text-center border-bottom pb-4">
+                            <h4 class="dark-text">Subtotal</h4>
+                            <h3 class="dark-text">$265.00</h3>
+                        </div>
+                        <div class="cart-comment py-4">
+                            <h6 class="mb-3"><span class="blue-span rounded px-1 pb-1 mr-2"><small>Note</small></span>Additional comments</h6>
+                            <textarea name="comment" id="comment" cols="30" rows="10" class="form-control"></textarea>
+                        </div>
+                        <a href="{% url 'checkout' %}" class="btn btn-primary btn-block py-2 mt-2 font-weight-md"><i class="far fa-credit-card mr-2"></i>Proceed to Checkout</a>
                     </div>
                 </div>
             </div>

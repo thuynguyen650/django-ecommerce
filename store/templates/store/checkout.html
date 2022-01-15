@@ -1,1 +1,150 @@
-<h1>Checkout</h1>
+{% extends 'store/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="banner cart-banner text-light p-5">
+        This is checkout page
+    </div>
+    <div class="checkout-main">
+        <div class="container py-5 position-relative">
+            <div class="row">
+                <div class="col-8">
+                    <div class="user-info p-5 mb-4">
+                        This is User Profile info
+                    </div>
+                    <div class="checkout-form">
+                        <h5 class="dark-text">Shipping address</h5>
+
+                        <form action="" class="border-top mt-3 py-3">
+                            <div class="row">
+                                <div class="col">
+                                    <label for="inputFirstname">First Name</label>
+                                    <input type="text" name="inputFirstname" class="form-control">
+                                </div>
+                                <div class="col">
+                                    <label for="inputLastname">Last Name</label>
+                                    <input type="text" name="inputLastname" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    <label for="inputEmail">Email Address</label>
+                                    <input type="email" name="inputEmail" class="form-control">
+                                </div>
+                                <div class="col">
+                                    <label for="inputPhone">Phone Number</label>
+                                    <input type="tel" name="inputPhone" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    <label for="inputCompany">Company</label>
+                                    <input type="text" name="inputCompany" class="form-control">
+                                </div>
+                                <div class="col">
+                                    <label for="inputCountry">Country</label>
+                                    <select id="inputCountry" class="form-control">
+                                        <option selected>Choose country</option>
+                                        <option>...</option>
+                                      </select>
+                                </div>
+                            </div>
+
+                            <div class="row pb-4">
+                                <div class="col">
+                                    <label for="inputState">State</label>
+                                    <select id="inputState" class="form-control">
+                                        <option selected>Choose state</option>
+                                        <option>...</option>
+                                      </select>
+                                </div>
+                                <div class="col">
+                                    <label for="inputCity">City</label>
+                                    <select id="inputCity" class="form-control">
+                                        <option selected>Choose city</option>
+                                        <option>...</option>
+                                      </select>
+                                </div>
+                            </div>
+
+                            
+                            <div class="row">
+                                <div class="form-check col border-top mx-3 py-2">
+                                    <input class="form-check-input" type="checkbox" id="defaultAddress">
+                                    <label class="form-check-label" for="defaultAddress">
+                                      Use as default address
+                                    </label>
+                                  </div>
+                            </div>
+
+                            <div class="row mt-3">
+                                <div class="col">
+                                    <button class="btn btn-outline-secondary btn-block p-2 font-weight-md"><i class="fas fa-chevron-left mr-2"></i> Back to Cart</button>
+                                </div>
+                                <div class="col">
+                                    <button type="submit" class="btn btn-primary btn-block p-2 font-weight-md">Proceed to Shipping <i class="fas fa-chevron-right ml-2"></i></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-4">
+                    <div class="sidebar rounded p-4 ml-5 mr-3 position-absolute">
+                        <h5 class="text-center">Order Summary</h5>
+                        <ul class="list-unstyled checkout-list">
+                            <li class="checkout-item border-bottom d-flex">
+                                <img class="checkout-img" src="{% static 'store/image/pd1.jpg' %}" alt="pd1">
+                                <div class="checkout-item-name mt-3">
+                                    <a href="/" class="checkout-product-name font-weight-md dark-text">Women Colorblock Sneakers</a>
+                                    <p class="font-weight-bold">$150.00 <span class="light-text font-weight-normal">x 1</span></p>
+                                </div>
+                            </li>
+
+                            <li class="checkout-item border-bottom d-flex">
+                                <img class="checkout-img" src="{% static 'store/image/pd1.jpg' %}" alt="pd1">
+                                <div class="checkout-item-name mt-3">
+                                    <a href="/" class="checkout-product-name font-weight-md dark-text">Women Colorblock Sneakers</a>
+                                    <p class="font-weight-bold">$150.00 <span class="light-text font-weight-normal">x 1</span></p>
+                                </div>
+                            </li>
+
+                            <li class="checkout-item border-bottom d-flex">
+                                <img class="checkout-img" src="{% static 'store/image/pd1.jpg' %}" alt="pd1">
+                                <div class="checkout-item-name mt-3">
+                                    <a href="/" class="checkout-product-name font-weight-md dark-text">Women Colorblock Sneakers</a>
+                                    <p class="font-weight-bold">$150.00 <span class="light-text font-weight-normal">x 1</span></p>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="checkout-calculator border-bottom pb-2">
+                            <div class="calculator-row d-flex justify-content-between light-text mb-1 font-weight-md">
+                                <span>Subtotal:</span>
+                                <span>$265.00</span>
+                            </div>
+
+                            <div class="calculator-row d-flex justify-content-between light-text mb-1 font-weight-md">
+                                <span>Shipping:</span>
+                                <span>$265.00</span>
+                            </div>
+                            <div class="calculator-row d-flex justify-content-between light-text mb-1 font-weight-md">
+                                <span>Taxes:</span>
+                                <span>$265.00</span>
+                            </div>
+                            <div class="calculator-row d-flex justify-content-between light-text mb-1 font-weight-md">
+                                <span>Discount:</span>
+                                <span>$265.00</span>
+                            </div>
+                        </div>
+
+                        <div class="checkout-total md-text mt-2">
+                            <h2 class="text-center">$275.00</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
