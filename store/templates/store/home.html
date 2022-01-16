@@ -3,14 +3,15 @@
 {% block content %}
     <div class="home-banner">
         <div class="container d-flex justify-content-between">
-            <div class="banner-left ml-3">
-                <img src="{% static 'store/image/banner.png' %}" alt="banner-img">
+            <div class="banner-left text-light">
+                <h2 class="font-weight-light">Hiệu sách</h2>
+                <h1 class="mb-4 text-center">Hoa Mặt Trời</h1>
+                <h5 class="pt-1"><i>"A reader lives a thousand lives before he dies."</i></h5>
+                <h6 class="text-right pb-4"><i>George R.R. Martin</i></h6>
+                <a href="{% url 'shop' %}" class="btn btn-primary mt-4 btn-block"><i>Mời bạn ghé thăm kệ sách nhà Hoa <i class="fas fa-chevron-right ml-2"></i></i></a>
             </div>
-            <div class="banner-right text-light">
-                <h2 class="font-weight-light">Hurry up! Limited time offer.</h2>
-                <h1>Women Sportswear Sale</h1>
-                <h5 class="pt-1">Sneakers, Keds, Sweatshirts, Hoodies & much more...</h5>
-                <a href="/" class="btn btn-lg btn-primary mt-4">Shop now <i class="fas fa-chevron-right ml-2"></i></a>
+            <div class="banner-right ml-3">
+                <img src="{% static 'store/image/banner.png' %}" alt="banner-img">
             </div>
         </div>
     </div>

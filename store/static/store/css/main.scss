@@ -1,4 +1,4 @@
-$primary-color: #fe696a;
+$primary-color: #db5a04;
 $dark-color: #232a38;
 $text-color: #4b566b;
 $light-text-color: #8991A4;
@@ -47,8 +47,8 @@ a:hover {
     background-color: $primary-color;
     border: 1px solid $primary-color;
     &:hover, &:active {
-        background-color: #fc3e3e;
-        border: 1px solid $primary-color;
+        background-color: #f16519!important;
+        border: 1px solid #f16519!important;
     }   
 }
 
@@ -69,7 +69,7 @@ a:hover {
 }
 
 .page-container {
-    margin-top: 72px;
+    margin-top: 56px;
 }
 
 .banner {
@@ -91,9 +91,12 @@ a:hover {
     box-shadow: 0px 19px 3px -18px rgba(0,0,0,0.1);
 }
 .navbar {
+    padding: 0;
     background-color: #fff;
-    navbar-brand h3 {
-        color: rgb(55, 63, 80);
+    .navbar-brand h3 {
+        color: $primary-color;
+        border-top-right-radius: 100%!important;
+
     }
     .navbar-img {
         height: 25px;
@@ -101,7 +104,7 @@ a:hover {
     }
 
     .navbar-toolbar {
-        flex: 0.25;
+        flex: 0.34;
         .cart-icon {
             position: relative;
             background-color: #f3f5f9;
@@ -175,14 +178,20 @@ footer {
 
 // home page
 .home-banner {
-    background-color: #F5B1B0;
+    background-image: linear-gradient(#db7704, #db9004);
     max-height: 1230px;
     overflow: hidden;
-    .banner-right {
-        margin-top: 160px;
-        margin-right: 80px;
+    .banner-left {
+        margin: 194px -130px 0 0px;
         h1 {
             font-size: 50px;
+            color: #a54400;
+        }
+    }
+    .banner-right {
+        img {
+            width: 800px;
+            height: 600px;
         }
     }
 }
@@ -248,7 +257,7 @@ footer {
         }
         .product-span {
             .fas {
-                color: #FEA569;
+                color: $primary-color;
                 font-size: 12px;
                 &.star-outline {
                     font-weight: 400;
@@ -263,7 +272,7 @@ footer {
             }
         }
         .product-hidden {
-            bottom: -102px;
+            bottom: -54px;
             background-color: #fff;
             left: 15px;
             right: 15px;
