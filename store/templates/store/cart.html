@@ -10,96 +10,26 @@
             <div class="row">
                 <div class="col-8">
                     <ul class="list-unstyled">
+                        {% for order_item in order_items %}
                         <li class="cart-item pb-3 row border-bottom">
                             <a href="/" class="cart-img col-3">
-                                <img class="cart-img" src="{% static 'store/image/pd1.jpg' %}" alt="pd">
+                                <img class="cart-img" src="{{ order_item.product.image.url }}" alt="pd">
                             </a>
 
                             <div class="cart-detail d-flex flex-column col-6 pt-3 mt-3">
-                                <a href="/" class="product-link mb-2 dark-text">Women Colorblock Sneakers</a>
-                                <small class="font-weight-md"><span class="light-text">Size:</span> 8.5</small>
-                                <small class="font-weight-md"><span class="light-text">Color:</span> White & Blue</small>
-                                <span class="product-price mt-2 d-block">$154.00</span>
+                                <a href="/" class="product-link mb-2 dark-text">{{ order_item.product }}</a>
+                                <!-- <small class="font-weight-md"><span class="light-text">Size:</span> 8.5</small> -->
+                                <!-- <small class="font-weight-md"><span class="light-text">Color:</span> White & Blue</small> -->
+                                <span class="product-price mt-2 d-block">₫ {{ order_item.product.price }}</span>
                             </div>
 
                             <div class="product-quantity col-3 pt-3 mt-3">
                                 <span class="ml-5 font-weight-md mb-2 d-block dark-text">Quantity</span>
-                                <input type="number" class="form-control ml-5" value="1" min="1" max="5">
+                                <input type="number" class="form-control ml-5" value="{{ order_item.quantity }}" min="1" max="5">
                                 <button class="btn ml-5 font-weight-md px-0 mt-1"><i class="far fa-times-circle mr-2"></i>Remove</button>
                             </div>
                         </li>
-                        <li class="cart-item pb-3 row">
-                            <a href="/" class="cart-img col-3">
-                                <img class="cart-img" src="{% static 'store/image/pd1.jpg' %}" alt="pd">
-                            </a>
-
-                            <div class="cart-detail d-flex flex-column col-6 pt-3 mt-3">
-                                <a href="/" class="product-link mb-2 dark-text">Women Colorblock Sneakers</a>
-                                <small class="font-weight-md"><span class="light-text">Size:</span> 8.5</small>
-                                <small class="font-weight-md"><span class="light-text">Color:</span> White & Blue</small>
-                                <span class="product-price mt-2 d-block">$154.00</span>
-                            </div>
-
-                            <div class="product-quantity col-3 pt-3 mt-3">
-                                <span class="ml-5 font-weight-bold mb-2 d-block dark-text">Quantity</span>
-                                <input type="number" class="form-control ml-5" value="1" min="1" max="5">
-                                <button class="btn ml-5 font-weight-md px-0 mt-1"><i class="far fa-times-circle mr-2"></i>Remove</button>
-                            </div>
-                        </li>
-                        <li class="cart-item pb-3 row">
-                            <a href="/" class="cart-img col-3">
-                                <img class="cart-img" src="{% static 'store/image/pd1.jpg' %}" alt="pd">
-                            </a>
-
-                            <div class="cart-detail d-flex flex-column col-6 pt-3 mt-3">
-                                <a href="/" class="product-link dark-text mb-2">Women Colorblock Sneakers</a>
-                                <small class="font-weight-md"><span class="light-text">Size:</span> 8.5</small>
-                                <small class="font-weight-md"><span class="light-text">Color:</span> White & Blue</small>
-                                <span class="product-price mt-2 d-block">$154.00</span>
-                            </div>
-
-                            <div class="product-quantity col-3 pt-3 mt-3">
-                                <span class="ml-5 font-weight-bold mb-2 d-block dark-text">Quantity</span>
-                                <input type="number" class="form-control ml-5" value="1" min="1" max="5">
-                                <button class="btn ml-5 font-weight-md px-0 mt-1"><i class="far fa-times-circle mr-2"></i>Remove</button>
-                            </div>
-                        </li>
-                        <li class="cart-item pb-3 row">
-                            <a href="/" class="cart-img col-3">
-                                <img class="cart-img" src="{% static 'store/image/pd1.jpg' %}" alt="pd">
-                            </a>
-
-                            <div class="cart-detail d-flex flex-column col-6 pt-3 mt-3">
-                                <a href="/" class="product-link dark-text mb-2">Women Colorblock Sneakers</a>
-                                <small class="font-weight-md"><span class="light-text">Size:</span> 8.5</small>
-                                <small class="font-weight-md"><span class="light-text">Color:</span> White & Blue</small>
-                                <span class="product-price mt-2 d-block">$154.00</span>
-                            </div>
-
-                            <div class="product-quantity col-3 pt-3 mt-3">
-                                <span class="ml-5 font-weight-bold mb-2 d-block dark-text">Quantity</span>
-                                <input type="number" class="form-control ml-5" value="1" min="1" max="5">
-                                <button class="btn ml-5 font-weight-md px-0 mt-1"><i class="far fa-times-circle mr-2"></i>Remove</button>
-                            </div>
-                        </li>
-                        <li class="cart-item pb-3 row">
-                            <a href="/" class="cart-img col-3">
-                                <img class="cart-img" src="{% static 'store/image/pd1.jpg' %}" alt="pd">
-                            </a>
-
-                            <div class="cart-detail d-flex flex-column col-6 pt-3 mt-3">
-                                <a href="/" class="product-link dark-text mb-2">Women Colorblock Sneakers</a>
-                                <small class="font-weight-md"><span class="light-text">Size:</span> 8.5</small>
-                                <small class="font-weight-md"><span class="light-text">Color:</span> White & Blue</small>
-                                <span class="product-price mt-2 d-block">$154.00</span>
-                            </div>
-
-                            <div class="product-quantity col-3 pt-3 mt-3">
-                                <span class="ml-5 font-weight-bold mb-2 d-block dark-text">Quantity</span>
-                                <input type="number" class="form-control ml-5" value="1" min="1" max="5">
-                                <button class="btn ml-5 font-weight-md px-0 mt-1"><i class="far fa-times-circle mr-2"></i>Remove</button>
-                            </div>
-                        </li>
+                        {% endfor %}
                     </ul>
                 </div>
 

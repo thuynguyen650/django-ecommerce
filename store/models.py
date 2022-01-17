@@ -39,7 +39,7 @@ class Order(models.Model):
     transaction_id = models.IntegerField()
 
     def __str__(self):
-        return self.id
+        return str(self.transaction_id)
 
 class OrderItem(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
@@ -48,7 +48,7 @@ class OrderItem(models.Model):
     added_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.id
+        return str(self.id)
 
 
 class ShippingAddress(models.Model):
