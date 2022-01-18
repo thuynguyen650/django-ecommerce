@@ -92,55 +92,41 @@
 
                 <div class="col-4">
                     <div class="sidebar rounded p-4 ml-5 mr-3 position-absolute">
-                        <h5 class="text-center">Order Summary</h5>
+                        <h5 class="text-center">Sản phẩm</h5>
                         <ul class="list-unstyled checkout-list">
-                            <li class="checkout-item border-bottom d-flex">
-                                <img class="checkout-img" src="{% static 'store/image/pd1.jpg' %}" alt="pd1">
-                                <div class="checkout-item-name mt-3">
-                                    <a href="/" class="checkout-product-name font-weight-md dark-text">Women Colorblock Sneakers</a>
-                                    <p class="font-weight-bold">$150.00 <span class="light-text font-weight-normal">x 1</span></p>
+                            {% for order_item in order_items %}
+                            <li class="checkout-item border-bottom d-flex mb-1 pb-1">
+                                <img class="checkout-img" src="{{ order_item.product.image.url }}" alt="pd1">
+                                <div class="checkout-item-name">
+                                    <a href="/" class="checkout-product-name font-weight-md dark-text">{{ order_item.product.name }}</a>
+                                    <p class="font-weight-bold">₫ {{ order_item.product.price }} <span class="light-text font-weight-normal">x {{ order_item.quantity }}</span></p>
                                 </div>
                             </li>
-
-                            <li class="checkout-item border-bottom d-flex">
-                                <img class="checkout-img" src="{% static 'store/image/pd1.jpg' %}" alt="pd1">
-                                <div class="checkout-item-name mt-3">
-                                    <a href="/" class="checkout-product-name font-weight-md dark-text">Women Colorblock Sneakers</a>
-                                    <p class="font-weight-bold">$150.00 <span class="light-text font-weight-normal">x 1</span></p>
-                                </div>
-                            </li>
-
-                            <li class="checkout-item border-bottom d-flex">
-                                <img class="checkout-img" src="{% static 'store/image/pd1.jpg' %}" alt="pd1">
-                                <div class="checkout-item-name mt-3">
-                                    <a href="/" class="checkout-product-name font-weight-md dark-text">Women Colorblock Sneakers</a>
-                                    <p class="font-weight-bold">$150.00 <span class="light-text font-weight-normal">x 1</span></p>
-                                </div>
-                            </li>
+                            {% endfor %}
                         </ul>
 
                         <div class="checkout-calculator border-bottom pb-2">
                             <div class="calculator-row d-flex justify-content-between light-text mb-1 font-weight-md">
-                                <span>Subtotal:</span>
-                                <span>$265.00</span>
+                                <span>Tổng số tiền:</span>
+                                <span>₫ {{ order.get_subtotal }}</span>
                             </div>
 
                             <div class="calculator-row d-flex justify-content-between light-text mb-1 font-weight-md">
-                                <span>Shipping:</span>
-                                <span>$265.00</span>
+                                <span>Phí vận chuyển:</span>
+                                <span>₫ 0</span>
                             </div>
                             <div class="calculator-row d-flex justify-content-between light-text mb-1 font-weight-md">
-                                <span>Taxes:</span>
-                                <span>$265.00</span>
+                                <span>Thuế:</span>
+                                <span>₫ 0</span>
                             </div>
                             <div class="calculator-row d-flex justify-content-between light-text mb-1 font-weight-md">
-                                <span>Discount:</span>
-                                <span>$265.00</span>
+                                <span>Giảm giá:</span>
+                                <span>₫ 0</span>
                             </div>
                         </div>
 
                         <div class="checkout-total md-text mt-2">
-                            <h2 class="text-center">$275.00</h2>
+                            <h2 class="text-center">₫ {{ order.get_subtotal }}</h2>
                         </div>
                     </div>
                 </div>

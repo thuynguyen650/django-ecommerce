@@ -1,4 +1,5 @@
 from contextlib import nullcontext
+from re import sub
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -41,6 +42,12 @@ class Order(models.Model):
     def __str__(self):
         return str(self.transaction_id)
 
+    def get_subtotal(self):
+        order_items = self.orderitem_set.all()
+        order_items_total = [order_item.get_total() for order_item in order_items]
+        subtotal = sum(order_items_total)
+        return subtotal
+
 class OrderItem(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     order = models.ForeignKey(Order, on_delete=models.CASCADE)
@@ -50,13 +57,17 @@ class OrderItem(models.Model):
     def __str__(self):
         return str(self.id)
 
+    def get_total(self):
+        return self.quantity * self.product.price
+
 
 class ShippingAddress(models.Model):
     order = models.ForeignKey(Order, on_delete=models.SET_NULL, null=True, blank=True)
+    customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True, blank=True)
     address = models.CharField(max_length=200)
     city = models.CharField(max_length=100)
     state = models.CharField(max_length=100)
-    zipcode = models.IntegerField()
+    zipcode = models.CharField(max_length=200)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

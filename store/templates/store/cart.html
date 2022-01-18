@@ -11,22 +11,27 @@
                 <div class="col-8">
                     <ul class="list-unstyled">
                         {% for order_item in order_items %}
-                        <li class="cart-item pb-3 row border-bottom">
-                            <a href="/" class="cart-img col-3">
+                        <li class="cart-item pb-3 row border-bottom mb-3">
+                            <a href="/" class="cart-img col-2">
                                 <img class="cart-img" src="{{ order_item.product.image.url }}" alt="pd">
                             </a>
 
-                            <div class="cart-detail d-flex flex-column col-6 pt-3 mt-3">
+                            <div class="cart-detail d-flex flex-column col-6">
                                 <a href="/" class="product-link mb-2 dark-text">{{ order_item.product }}</a>
                                 <!-- <small class="font-weight-md"><span class="light-text">Size:</span> 8.5</small> -->
                                 <!-- <small class="font-weight-md"><span class="light-text">Color:</span> White & Blue</small> -->
                                 <span class="product-price mt-2 d-block">₫ {{ order_item.product.price }}</span>
                             </div>
 
-                            <div class="product-quantity col-3 pt-3 mt-3">
-                                <span class="ml-5 font-weight-md mb-2 d-block dark-text">Quantity</span>
-                                <input type="number" class="form-control ml-5" value="{{ order_item.quantity }}" min="1" max="5">
-                                <button class="btn ml-5 font-weight-md px-0 mt-1"><i class="far fa-times-circle mr-2"></i>Remove</button>
+                            <div class="product-quantity col-2 p-0">
+                                <span class="font-weight-md mb-2 d-block dark-text">Quantity</span>
+                                <input type="number" class="form-control" value="{{ order_item.quantity }}" min="1" max="5">
+                                <button class="btn font-weight-md px-0 mt-1"><i class="far fa-times-circle mr-2"></i>Remove</button>
+                            </div>
+
+                            <div class="product-total col-2">
+                                <span class="font-weight-md mb-2 d-block dark-text">Total</span>
+                                <span class="product-price mt-2 d-block">₫ {{ order_item.get_total }}</span>
                             </div>
                         </li>
                         {% endfor %}
@@ -37,7 +42,7 @@
                     <div class="sidebar rounded p-4 ml-5 mr-3 position-absolute">
                         <div class="cart-total text-center border-bottom pb-4">
                             <h4 class="dark-text">Subtotal</h4>
-                            <h3 class="dark-text">$265.00</h3>
+                            <h3 class="dark-text">₫ {{ order.get_subtotal }}</h3>
                         </div>
                         <div class="cart-comment py-4">
                             <h6 class="mb-3"><span class="blue-span rounded px-1 pb-1 mr-2"><small>Note</small></span>Additional comments</h6>
