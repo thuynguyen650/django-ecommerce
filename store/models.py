@@ -47,11 +47,15 @@ class Order(models.Model):
         order_items_total = [order_item.get_total() for order_item in order_items]
         subtotal = sum(order_items_total)
         return subtotal
+    
+    def get_items_total(self):
+        order_items = self.orderitem_set.all()
+        return len(order_items)
 
 class OrderItem(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     order = models.ForeignKey(Order, on_delete=models.CASCADE)
-    quantity = models.IntegerField()
+    quantity = models.IntegerField(default=0)
     added_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

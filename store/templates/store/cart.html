@@ -9,7 +9,12 @@
         <div class="container py-5 position-relative">
             <div class="row">
                 <div class="col-8">
-                    <ul class="list-unstyled">
+                    <div class="row border p-2 mb-2">
+                        <span class="col-8 dark-text font-weight-md text-center">Thông tin sản phẩm</span>
+                        <span class="col-2 dark-text font-weight-md text-center border-left">Số lượng</span>
+                        <span class="col-2 dark-text font-weight-md text-center border-left">Thành tiền</span>
+                    </div>
+                    <ul class="list-unstyled pt-2">
                         {% for order_item in order_items %}
                         <li class="cart-item pb-3 row border-bottom mb-3">
                             <a href="/" class="cart-img col-2">
@@ -23,14 +28,24 @@
                                 <span class="product-price mt-2 d-block">₫ {{ order_item.product.price }}</span>
                             </div>
 
-                            <div class="product-quantity col-2 p-0">
-                                <span class="font-weight-md mb-2 d-block dark-text">Quantity</span>
-                                <input type="number" class="form-control" value="{{ order_item.quantity }}" min="1" max="5">
-                                <button class="btn font-weight-md px-0 mt-1"><i class="far fa-times-circle mr-2"></i>Remove</button>
+                            <div class="product-quantity col-2 p-0 text-center mt-4">
+                                <div class="row mx-3">
+                                    <span data-product="{{order_item.product.id}}"
+                                    data-action="remove"
+                                    class="update-cart col-3 border d-flex justify-content-center align-items-center">
+                                        <i class="fas fa-minus"></i>
+                                    </span>
+                                    <span class="col-4 border-top border-bottom d-flex align-items-center justify-content-center py-1">{{ order_item.quantity }}</span>
+                                    <span data-product="{{ order_item.product.id }}"
+                                    data-action="add"
+                                    class="update-cart cursor-pointer col-3 border d-flex justify-content-center align-items-center">
+                                        <i class="fas fa-plus"></i>
+                                    </span>
+                                </div>
+                                <button class="btn font-weight-md px-0 mt-1"><i class="far fa-times-circle mr-2"></i>Xóa</button>
                             </div>
 
-                            <div class="product-total col-2">
-                                <span class="font-weight-md mb-2 d-block dark-text">Total</span>
+                            <div class="product-total col-2 mt-3">
                                 <span class="product-price mt-2 d-block">₫ {{ order_item.get_total }}</span>
                             </div>
                         </li>
@@ -41,7 +56,7 @@
                 <div class="col-4">
                     <div class="sidebar rounded p-4 ml-5 mr-3 position-absolute">
                         <div class="cart-total text-center border-bottom pb-4">
-                            <h4 class="dark-text">Subtotal</h4>
+                            <h4 class="dark-text">Tổng số tiền ({{order.get_items_total }} sản phẩm)</h4>
                             <h3 class="dark-text">₫ {{ order.get_subtotal }}</h3>
                         </div>
                         <div class="cart-comment py-4">

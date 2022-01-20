@@ -324,6 +324,9 @@ footer {
         }
     }
     .product-quantity {
+        .update-cart {
+            cursor: pointer;
+        }
         .btn {
             color: $primary-color;
         }

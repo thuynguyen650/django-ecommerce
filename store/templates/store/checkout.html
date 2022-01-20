@@ -12,59 +12,60 @@
                         This is User Profile info
                     </div>
                     <div class="checkout-form">
-                        <h5 class="dark-text">Shipping address</h5>
+                        <h5 class="dark-text">Địa Chỉ Nhận Hàng</h5>
 
                         <form action="" class="border-top mt-3 py-3">
                             <div class="row">
                                 <div class="col">
-                                    <label for="inputFirstname">First Name</label>
-                                    <input type="text" name="inputFirstname" class="form-control">
+                                    <label for="inputFirstname">Tên</label>
+                                    <input type="text" name="inputFirstname" class="form-control" required>
                                 </div>
                                 <div class="col">
-                                    <label for="inputLastname">Last Name</label>
-                                    <input type="text" name="inputLastname" class="form-control">
+                                    <label for="inputLastname">Họ</label>
+                                    <input type="text" name="inputLastname" class="form-control" required>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="col">
-                                    <label for="inputEmail">Email Address</label>
+                                    <label for="inputEmail">Địa chỉ Email</label>
                                     <input type="email" name="inputEmail" class="form-control">
                                 </div>
                                 <div class="col">
-                                    <label for="inputPhone">Phone Number</label>
-                                    <input type="tel" name="inputPhone" class="form-control">
+                                    <label for="inputPhone">Số điện thoại</label>
+                                    <input type="tel" name="inputPhone" class="form-control" required>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="col">
-                                    <label for="inputCompany">Company</label>
-                                    <input type="text" name="inputCompany" class="form-control">
+                                    <label for="inputCountry">Tỉnh / Thành phố</label>
+                                    <select id="inputCountry" class="form-control" required>
+                                        <option value="">Hà Nội</option>
+                                        <option value="">Hồ Chí Minh</option>
+                                      </select>
                                 </div>
                                 <div class="col">
-                                    <label for="inputCountry">Country</label>
-                                    <select id="inputCountry" class="form-control">
-                                        <option selected>Choose country</option>
-                                        <option>...</option>
+                                    <label for="inputState">Quận / Huyện</label>
+                                    <select id="inputState" class="form-control" required>
+                                        <option>ABC</option>
+                                        <option>ABC</option>
+                                        <option>ABC</option>
                                       </select>
                                 </div>
                             </div>
 
                             <div class="row pb-4">
                                 <div class="col">
-                                    <label for="inputState">State</label>
-                                    <select id="inputState" class="form-control">
-                                        <option selected>Choose state</option>
-                                        <option>...</option>
+                                    <label for="inputCity">Phường / Xã</label>
+                                    <select id="inputCity" class="form-control" required>
+                                        <option>EEE</option>
+                                        <option>EEE</option>
                                       </select>
                                 </div>
                                 <div class="col">
-                                    <label for="inputCity">City</label>
-                                    <select id="inputCity" class="form-control">
-                                        <option selected>Choose city</option>
-                                        <option>...</option>
-                                      </select>
+                                    <label for="inputCompany">Địa chỉ cụ thể</label>
+                                    <input type="text" name="inputCompany" class="form-control" required>
                                 </div>
                             </div>
 
@@ -73,17 +74,23 @@
                                 <div class="form-check col border-top mx-3 py-2">
                                     <input class="form-check-input" type="checkbox" id="defaultAddress">
                                     <label class="form-check-label" for="defaultAddress">
-                                      Use as default address
+                                      Lưu làm địa chỉ mặc định
                                     </label>
+                                  </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="form-check col border-top mx-3 py-2">
+                                    Chọn phương thức thanh toán
                                   </div>
                             </div>
 
                             <div class="row mt-3">
                                 <div class="col">
-                                    <a href="{% url 'cart' %}" class="btn btn-outline-secondary btn-block p-2 font-weight-md"><i class="fas fa-chevron-left mr-2"></i> Back to Cart</a>
+                                    <a href="{% url 'cart' %}" class="btn btn-outline-secondary btn-block p-2 font-weight-md"><i class="fas fa-chevron-left mr-2"></i> Quay lại giỏ hàng</a>
                                 </div>
                                 <div class="col">
-                                    <button type="submit" class="btn btn-primary btn-block p-2 font-weight-md">Proceed to Shipping <i class="fas fa-chevron-right ml-2"></i></button>
+                                    <button type="submit" class="btn btn-primary btn-block p-2 font-weight-md btn-checkout">Tiếp tục <i class="fas fa-chevron-right ml-2"></i></button>
                                 </div>
                             </div>
                         </form>
