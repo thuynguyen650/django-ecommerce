@@ -36,11 +36,12 @@ class Product(models.Model):
 
 class Order(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True, blank=True)
+    completed = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
-    transaction_id = models.IntegerField()
+    transaction_id = models.CharField(max_length=200)
 
     def __str__(self):
-        return str(self.transaction_id)
+        return str(self.id)
 
     def get_subtotal(self):
         order_items = self.orderitem_set.all()
@@ -69,12 +70,11 @@ class ShippingAddress(models.Model):
     order = models.ForeignKey(Order, on_delete=models.SET_NULL, null=True, blank=True)
     customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True, blank=True)
     address = models.CharField(max_length=200)
-    city = models.CharField(max_length=100)
-    state = models.CharField(max_length=100)
-    zipcode = models.CharField(max_length=200)
+    province = models.CharField(max_length=200)
+    district = models.CharField(max_length=200)
+    commune = models.CharField(max_length=200)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.address
     
-

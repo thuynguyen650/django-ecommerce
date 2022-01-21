@@ -346,4 +346,18 @@ footer {
     width: 96px;
 }
 
+#checkout-form {
+ select {
+    padding: 0px 8px;
+    height: 42px;
+    cursor: pointer;
+ }
+ input.input-filled {
+     background-color: #ffe9d6;
+     &:focus {
+         background-color: unset;
+     }
+ }
+}
+
 // product detail

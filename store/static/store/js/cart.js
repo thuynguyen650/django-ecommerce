@@ -33,9 +33,3 @@ function UpdateCart(productId, action) {
         location.reload()
     })
 }
-
-checkoutBtn = document.querySelector('.btn-checkout')
-checkoutBtn.onclick = (e) => {
-    // e.preventDefault()
-    console.log('Clicked')
-}

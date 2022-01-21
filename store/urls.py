@@ -9,4 +9,5 @@ urlpatterns = [
     path('checkout/', views.checkoutPageView, name='checkout'),
 
     path('update_item/', views.updateItem, name='update_item'),
+    path('submit_checkout/', views.submitCheckout, name='submit_checkout')
 ]
