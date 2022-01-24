@@ -9,61 +9,23 @@ from .models import (
 from django.http import JsonResponse
 import json
 import datetime
-from .utils import cookieCart
+from .utils import cookieCart, cartData
 
 # Create your views here.
 def homePageView(request):
-    if request.user.is_authenticated:
-        customer = request.user.customer
-        order, created = Order.objects.get_or_create(customer = customer, completed=False)
-    else:
-        cookieData = cookieCart(request)
-        order = cookieData['order']
+    order = cartData(request)['order']
     return render(request, 'store/home.html', {'order': order})
 
 def shopPageView(request):
-    products = Product.objects.all()
-    if request.user.is_authenticated:
-        customer = request.user.customer
-        order, created = Order.objects.get_or_create(customer = customer, completed=False)
-    else:
-        cookieData = cookieCart(request)
-        order = cookieData['order']
-    context = {
-        'order': order,
-        'products': products
-    }
+    context = cartData(request)
     return render(request, 'store/shop.html', context)
 
 def cartPageView(request):
-    print(cookieCart(request))
-    if request.user.is_authenticated:
-        customer = request.user.customer
-        order, created = Order.objects.get_or_create(customer = customer, completed=False)
-        order_items = order.orderitem_set.all() #parent.child_set.all()
-    else:
-        cookieData = cookieCart(request)
-        order = cookieData['order']
-        order_items = cookieData['order_items']
-    context = {
-        'order_items': order_items,
-        'order': order
-    }
+    context = cartData(request)
     return render(request, 'store/cart.html', context)
 
 def checkoutPageView(request):
-    if request.user.is_authenticated:
-        customer = request.user.customer
-        order, created = Order.objects.get_or_create(customer = customer, completed=False)
-        order_items = order.orderitem_set.all()
-    else:
-        cookieData = cookieCart(request)
-        order = cookieData['order']
-        order_items = cookieData['order_items']
-    context = {
-        'order_items': order_items,
-        'order': order
-    }
+    context = cartData(request)
     return render(request, 'store/checkout.html', context)
 
 def updateItem(request):

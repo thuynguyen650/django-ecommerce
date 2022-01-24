@@ -2,6 +2,7 @@
 import json
 from .models import *
 
+# handle guest cart 
 def cookieCart(request):
     try:
         cart = json.loads(request.COOKIES['cart'])
@@ -33,3 +34,18 @@ def cookieCart(request):
             pass
     return {'order': order, 'order_items': order_items}
     
+# handle cart data 
+def cartData(request):
+    if request.user.is_authenticated:
+        customer = request.user.customer
+        order, created = Order.objects.get_or_create(customer = customer, completed=False)
+        order_items = order.orderitem_set.all()
+    else:
+        cookieData = cookieCart(request)
+        order = cookieData['order']
+        order_items = cookieData['order_items']
+    context = {
+        'order_items': order_items,
+        'order': order
+    }
+    return context
