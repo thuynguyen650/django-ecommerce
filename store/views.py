@@ -9,6 +9,7 @@ from .models import (
 from django.http import JsonResponse
 import json
 import datetime
+from .utils import cookieCart
 
 # Create your views here.
 def homePageView(request):
@@ -16,7 +17,8 @@ def homePageView(request):
         customer = request.user.customer
         order, created = Order.objects.get_or_create(customer = customer, completed=False)
     else:
-        order = {'get_total': (0,0)}
+        cookieData = cookieCart(request)
+        order = cookieData['order']
     return render(request, 'store/home.html', {'order': order})
 
 def shopPageView(request):
@@ -25,7 +27,8 @@ def shopPageView(request):
         customer = request.user.customer
         order, created = Order.objects.get_or_create(customer = customer, completed=False)
     else:
-        order = {'get_total': (0,0)}
+        cookieData = cookieCart(request)
+        order = cookieData['order']
     context = {
         'order': order,
         'products': products
@@ -33,13 +36,15 @@ def shopPageView(request):
     return render(request, 'store/shop.html', context)
 
 def cartPageView(request):
+    print(cookieCart(request))
     if request.user.is_authenticated:
         customer = request.user.customer
         order, created = Order.objects.get_or_create(customer = customer, completed=False)
         order_items = order.orderitem_set.all() #parent.child_set.all()
     else:
-        order_items = []
-        order = {'get_total': (0,0)}
+        cookieData = cookieCart(request)
+        order = cookieData['order']
+        order_items = cookieData['order_items']
     context = {
         'order_items': order_items,
         'order': order
@@ -52,8 +57,9 @@ def checkoutPageView(request):
         order, created = Order.objects.get_or_create(customer = customer, completed=False)
         order_items = order.orderitem_set.all()
     else:
-        order_items = []
-        order = {'get_subtotal':0}
+        cookieData = cookieCart(request)
+        order = cookieData['order']
+        order_items = cookieData['order_items']
     context = {
         'order_items': order_items,
         'order': order

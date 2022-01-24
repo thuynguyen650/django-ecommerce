@@ -36,6 +36,30 @@
         const csrftoken = getCookie('csrftoken');
 
         const total = '{{order.get_subtotal}}'
+        
+        // get cookie value by cookie name
+        function getCookie(name) {
+            const cookies = document.cookie.split(';')
+
+            for(let i = 0; i < cookies.length; i++) {
+                cookiePair = cookies[i].split('=')
+                if(name == cookiePair[0].trim()) {
+                    return decodeURIComponent(cookiePair[1])
+                }
+            }
+
+            return null;
+        }
+
+        //get cart cookie
+        let cart = JSON.parse(getCookie('cart'))
+        if(cart == undefined) {
+            cart = {}
+            console.log('Cart was created!')
+            document.cookie = 'cart=' + JSON.stringify(cart) + '; domain=;path=/'
+        }
+
+        console.log('Cart: ', cart)
     </script>
 </head>
 <body>
