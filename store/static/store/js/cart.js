@@ -34,11 +34,14 @@ function addCookieItem(productId, action) {
             console.log('Item removed!')
             delete cart[productId]
         }
+    } else if(action=='delete') {
+        console.log('Item removed!')
+        delete cart[productId]
     }
     console.log(cart)
     //update cookie
     document.cookie = 'cart=' + JSON.stringify(cart) + ';domain=;path=/'
-    // location.reload()
+    location.reload()
 }
 
 //update cart when logged in

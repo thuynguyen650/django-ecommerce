@@ -4,7 +4,8 @@ from .models import (
     Product,
     OrderItem,
     Order,
-    ShippingAddress
+    ShippingAddress,
+    Customer
 )
 from django.http import JsonResponse
 import json
@@ -17,7 +18,13 @@ def homePageView(request):
     return render(request, 'store/home.html', {'order': order})
 
 def shopPageView(request):
-    context = cartData(request)
+    data = cartData(request)
+    products = Product.objects.all()
+    context = {
+        'order': data['order'],
+        'order_items': data['order_items'],
+        'products': products
+    }
     return render(request, 'store/shop.html', context)
 
 def cartPageView(request):
@@ -50,22 +57,41 @@ def updateItem(request):
 def submitCheckout(request):
     data = json.loads(request.body)
     if request.user.is_authenticated:
-        transaction_id = datetime.datetime.now()
         customer = request.user.customer
         order = Order.objects.get(customer=customer, completed=False)
-        order.transaction_id = transaction_id
-        if float(data['formInfo']['total']) == order.get_subtotal():
-            order.completed = True
-        order.save()
-        ShippingAddress.objects.create(
-            order = order,
-            customer = customer,
-            address = data['formInfo']['address'],
-            province = data['formInfo']['province'],
-            district = data['formInfo']['district'],
-            commune = data['formInfo']['commune']
-        )
 
     else:
         print('User is not log in')
+        # create customer
+        customer, created = Customer.objects.get_or_create(email=data['customerInfo']['email'])
+        customer.name = data['customerInfo']['name']
+        customer.telephone = data['customerInfo']['phone']
+        customer.save()
+
+        #create order
+        order = Order.objects.create(customer=customer, completed=False)
+
+        #create order items
+        order_items = cartData(request)['order_items']
+        for order_item in order_items:
+            product = Product.objects.get(id=order_item['product']['id'])
+            print(product)
+            OrderItem.objects.create(
+                product=product,
+                order=order,
+                quantity=order_item['quantity']
+            )
+    transaction_id = datetime.datetime.now()
+    order.transaction_id = transaction_id
+    if float(data['formInfo']['total']) == order.get_subtotal():
+        order.completed = True
+    order.save()
+    ShippingAddress.objects.create(
+        order = order,
+        customer = customer,
+        address = data['formInfo']['address'],
+        province = data['formInfo']['province'],
+        district = data['formInfo']['district'],
+        commune = data['formInfo']['commune']
+    )
     return JsonResponse(data['formInfo'], safe=False)
