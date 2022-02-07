@@ -10,7 +10,7 @@ from .models import (
 from django.http import JsonResponse
 import json
 import datetime
-from .utils import cookieCart, cartData
+from .utils import cookieCart, cartData, guestOrder
 
 # Create your views here.
 def homePageView(request):
@@ -59,28 +59,8 @@ def submitCheckout(request):
     if request.user.is_authenticated:
         customer = request.user.customer
         order = Order.objects.get(customer=customer, completed=False)
-
     else:
-        print('User is not log in')
-        # create customer
-        customer, created = Customer.objects.get_or_create(email=data['customerInfo']['email'])
-        customer.name = data['customerInfo']['name']
-        customer.telephone = data['customerInfo']['phone']
-        customer.save()
-
-        #create order
-        order = Order.objects.create(customer=customer, completed=False)
-
-        #create order items
-        order_items = cartData(request)['order_items']
-        for order_item in order_items:
-            product = Product.objects.get(id=order_item['product']['id'])
-            print(product)
-            OrderItem.objects.create(
-                product=product,
-                order=order,
-                quantity=order_item['quantity']
-            )
+        customer, order = guestOrder(request, data)
     transaction_id = datetime.datetime.now()
     order.transaction_id = transaction_id
     if float(data['formInfo']['total']) == order.get_subtotal():

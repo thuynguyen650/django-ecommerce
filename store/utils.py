@@ -49,3 +49,26 @@ def cartData(request):
         'order': order
     }
     return context
+
+# guest checkout function
+def guestOrder(request, data):
+    # create customer
+    customer, created = Customer.objects.get_or_create(email=data['customerInfo']['email'])
+    customer.name = data['customerInfo']['name']
+    customer.telephone = data['customerInfo']['phone']
+    customer.save()
+
+    #create order
+    order = Order.objects.create(customer=customer, completed=False)
+
+    #create order items
+    order_items = cartData(request)['order_items']
+    for order_item in order_items:
+        product = Product.objects.get(id=order_item['product']['id'])
+        print(product)
+        OrderItem.objects.create(
+            product=product,
+            order=order,
+            quantity=order_item['quantity']
+        )
+    return customer, order
