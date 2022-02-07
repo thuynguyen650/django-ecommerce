@@ -122,6 +122,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+#put static files inside store app
 STATIC_ROOT = os.path.join(BASE_DIR, 'store/static')
 
 STATICFILES_FINDERS = [
@@ -129,9 +130,12 @@ STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.AppDirectoriesFinder'
 ]
 
+#put media files in media dir
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+#access media files with this url
 MEDIA_URL = 'media/'
 
+#use scss
 COMPRESS_PRECOMPILERS = (
     ('text/x-scss', 'django_libsass.SassCompiler'),
 )

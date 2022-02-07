@@ -36,7 +36,6 @@ class Product(models.Model):
 class Order(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True, blank=True)
     completed = models.BooleanField(default=False)
-    created_at = models.DateTimeField(auto_now_add=True)
     transaction_id = models.CharField(max_length=200)
 
     def __str__(self):
@@ -56,7 +55,6 @@ class OrderItem(models.Model):
     product = models.ForeignKey(Product, on_delete=models.SET_NULL, blank=True, null=True)
     order = models.ForeignKey(Order, on_delete=models.SET_NULL, blank=True, null=True)
     quantity = models.IntegerField(default=0, blank=True)
-    added_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return str(self.id)
@@ -72,7 +70,6 @@ class ShippingAddress(models.Model):
     province = models.CharField(max_length=200)
     district = models.CharField(max_length=200)
     commune = models.CharField(max_length=200)
-    created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.address
