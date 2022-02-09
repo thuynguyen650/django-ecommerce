@@ -2,18 +2,8 @@
 {% load static %}
 {% block content %}
     <div class="home-banner">
-        <div class="container d-flex justify-content-between">
-            <div class="banner-left text-light">
-                <h2 class="font-weight-light">Hiệu sách</h2>
-                <h1 class="mb-4 text-center">Hoa Mặt Trời</h1>
-                <h5 class="pt-1"><i>"A reader lives a thousand lives before he dies."</i></h5>
-                <h6 class="text-right pb-4"><i>George R.R. Martin</i></h6>
-                <a href="{% url 'shop' %}" class="btn btn-primary mt-4 btn-block"><i>Mời bạn ghé thăm kệ sách nhà Hoa <i class="fas fa-chevron-right ml-2"></i></i></a>
-            </div>
-            <div class="banner-right ml-3">
-                <img src="{% static 'store/image/banner.png' %}" alt="banner-img">
-            </div>
-        </div>
+        <h2>Come for the book, leave with the knowledge</h2>
+        <a href="{% url 'shop' %}" class="btn btn-primary btn-lg">SHOP NOW</a>
     </div>
     <div class="more-info d-flex">
         <a class="more-info-left text-center p-5">

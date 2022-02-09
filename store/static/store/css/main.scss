@@ -73,7 +73,9 @@ a:hover {
 }
 
 .banner {
-    background-color: $bg-dark;
+    background: url('../image/slide_img.jpg');
+    background-size: cover;
+    min-height: 140px;
 }
 
 .sidebar {
@@ -104,7 +106,7 @@ a:hover {
     }
 
     .navbar-toolbar {
-        flex: 0.34;
+        flex: 0.24;
         .cart-icon {
             position: relative;
             background-color: #f3f5f9;
@@ -178,21 +180,19 @@ footer {
 
 // home page
 .home-banner {
-    background-image: linear-gradient(#db7704, #db9004);
-    max-height: 1230px;
-    overflow: hidden;
-    .banner-left {
-        margin: 194px -130px 0 0px;
-        h1 {
-            font-size: 50px;
-            color: #a54400;
-        }
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../image/slide_img.jpg');
+    min-height: 620px;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    padding-top: 250px;
+    a {
+        min-width: 200px;
     }
-    .banner-right {
-        img {
-            width: 800px;
-            height: 600px;
-        }
+    h2 {
+        color: #fff;
+        text-transform: uppercase;
+        margin-bottom: 30px;
     }
 }
 
@@ -226,7 +226,11 @@ footer {
 
 // shop page 
 .shop-main {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../image/slide_img.jpg');
+    background-position: center;
+    background-size: cover;
     .product-item {
+        background-color: #fff;
         border-radius: 4px;
         overflow: hidden;
         .product-top .btn-primary {
@@ -244,6 +248,8 @@ footer {
         }
         img {
             width: 100%;
+            max-height: 314px;
+            // padding: 0 25px;
             cursor: pointer;
         }
         .product-bottom {
@@ -272,7 +278,7 @@ footer {
             }
         }
         .product-hidden {
-            bottom: -54px;
+            bottom: -40px;
             background-color: #fff;
             left: 15px;
             right: 15px;
