@@ -9,12 +9,12 @@
             <div class="row">
                 <div class="col-8">
                     {% if order.get_items_total == 0 %}
-                        <h4 class="text-center">Bạn chưa thêm sản phẩm nào vào giỏ hàng</h4>
+                        <h4 class="text-center">You have not added any items into your cart!</h4>
                     {% else %}
                         <div class="row border p-2 mb-2">
-                            <span class="col-8 dark-text font-weight-md text-center">Thông tin sản phẩm</span>
-                            <span class="col-2 dark-text font-weight-md text-center border-left">Số lượng</span>
-                            <span class="col-2 dark-text font-weight-md text-center border-left">Thành tiền</span>
+                            <span class="col-8 dark-text font-weight-md text-center">Product Detail</span>
+                            <span class="col-2 dark-text font-weight-md text-center border-left">Quantity</span>
+                            <span class="col-2 dark-text font-weight-md text-center border-left">Total</span>
                         </div>
                         <ul class="list-unstyled pt-2">
                             {% for order_item in order_items %}
@@ -27,7 +27,7 @@
                                     <a href="/" class="product-link mb-2 dark-text">{{ order_item.product.name }}</a>
                                     <!-- <small class="font-weight-md"><span class="light-text">Size:</span> 8.5</small> -->
                                     <!-- <small class="font-weight-md"><span class="light-text">Color:</span> White & Blue</small> -->
-                                    <span class="product-price mt-2 d-block">₫ {{ order_item.product.price }}</span>
+                                    <span class="product-price mt-2 d-block">$ {{ order_item.product.price }}</span>
                                 </div>
 
                                 <div class="product-quantity col-2 p-0 text-center mt-4">
@@ -44,11 +44,11 @@
                                             <i class="fas fa-plus"></i>
                                         </span>
                                     </div>
-                                    <button data-product="{{ order_item.product.id }}" data-action="delete" class="btn font-weight-md px-0 mt-1 update-cart"><i class="far fa-times-circle mr-2"></i>Xóa</button>
+                                    <button data-product="{{ order_item.product.id }}" data-action="delete" class="btn font-weight-md px-0 mt-1 update-cart"><i class="far fa-times-circle mr-2"></i>Remove</button>
                                 </div>
 
                                 <div class="product-total col-2 mt-3">
-                                    <span class="product-price mt-2 d-block">₫ {{ order_item.get_total }}</span>
+                                    <span class="product-price mt-2 d-block">$ {{ order_item.get_total }}</span>
                                 </div>
                             </li>
                             {% endfor %}
@@ -57,10 +57,10 @@
                 </div>
 
                 <div class="col-4">
-                    <div class="sidebar rounded p-4 ml-5 mr-3 position-absolute">
+                    <div class="sidebar rounded p-4 ml-5 mr-3">
                         <div class="cart-total text-center border-bottom pb-4">
-                            <h4 class="dark-text">Tổng số tiền ({{order.get_items_total }} sản phẩm)</h4>
-                            <h3 class="dark-text">₫ {{ order.get_subtotal }}</h3>
+                            <h4 class="dark-text">Subtotal ({{order.get_items_total }} products)</h4>
+                            <h3 class="dark-text">$ {{ order.get_subtotal }}</h3>
                         </div>
                         <div class="cart-comment py-4">
                             <h6 class="mb-3"><span class="blue-span rounded px-1 pb-1 mr-2"><small>Note</small></span>Additional comments</h6>

@@ -1,0 +1,17 @@
+{% extends 'store/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="home-banner register">
+        <form class="form m-auto rounded" method="post">
+            <h3 class="text-center">Register your account</h3>
+            {% csrf_token %}
+            {{ form|crispy }}
+            <div class="form-submit d-flex justify-content-between align-items-center">
+                <small>Already have an account?
+                    <a href="/">Log in here</a>
+                </small>
+                <button type="submit" class="btn btn-primary">Register</button>
+            </div>
+        </form>
+    </div>
+{% endblock content %}

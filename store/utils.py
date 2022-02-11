@@ -5,7 +5,7 @@ from .models import *
 # handle guest cart 
 def cookieCart(request):
     try:
-        cart = json.loads(request.COOKIES['cart'])
+        cart = json.loads(request.COOKIES['cart']) #get product id and product quantity from cart cookie
     except:
         cart = {}
     order_items = []

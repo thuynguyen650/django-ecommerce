@@ -5,7 +5,8 @@ from .models import (
     OrderItem,
     Order,
     ShippingAddress,
-    Customer
+    Customer,
+    Category
 )
 from django.http import JsonResponse
 import json
@@ -20,10 +21,12 @@ def homePageView(request):
 def shopPageView(request):
     data = cartData(request)
     products = Product.objects.all()
+    categories = Category.objects.all()
     context = {
         'order': data['order'],
         'order_items': data['order_items'],
-        'products': products
+        'products': products,
+        'categories': categories
     }
     return render(request, 'store/shop.html', context)
 

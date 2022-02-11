@@ -39,9 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
     'store.apps.StoreConfig',
+    'users.apps.UsersConfig',
 
     #compressor to use scss
-    'compressor'
+    'compressor',
+    'crispy_forms'
 ]
 
 MIDDLEWARE = [
@@ -144,3 +146,4 @@ COMPRESS_PRECOMPILERS = (
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

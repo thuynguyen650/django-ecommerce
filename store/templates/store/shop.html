@@ -77,7 +77,10 @@
                 <div class="col-4">
                     <div class="sidebar rounded p-4 ml-5 mr-3">
                         <h4>Categories</h4>
-                        
+                        {% for category in categories %}
+                            <a class="category-link font-weight-md my-2" href="/">∘ {{ category.name }}</a>
+                            <br>
+                        {% endfor %}
                     </div>
                 </div>
             </div>

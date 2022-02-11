@@ -22,11 +22,11 @@
         // get cookie value by cookie name
         function getCookie(name) {
             const cookies = document.cookie.split(';')
-
+            console.log(document.cookie)
             for(let i = 0; i < cookies.length; i++) {
                 cookiePair = cookies[i].split('=')
                 if(name == cookiePair[0].trim()) {
-                    return decodeURIComponent(cookiePair[1])
+                    return decodeURIComponent(cookiePair[1]) 
                 }
             }
 
@@ -38,7 +38,7 @@
         const total = '{{order.get_subtotal}}'
 
         //get cart cookie
-        let cart = JSON.parse(getCookie('cart'))
+        let cart = JSON.parse(getCookie('cart')) //convert json to js
         if(cart == undefined) {
             cart = {}
             console.log('Cart was created!')
@@ -71,7 +71,7 @@
                     </li>
                 </ul>
                 <div class="navbar-toolbar d-flex justify-content-between">
-                    <a href="/" class="navbar-tool d-flex align-items-center dark-text">
+                    <a href="{% url 'register' %}" class="navbar-tool d-flex align-items-center dark-text">
                         <div class="navbar-tool-icon mr-3">
                             <!-- <img src="{% static 'store/image/default.png' %}" alt="avt" class="navbar-img rounded-circle border mr-2"> -->
                             <i class="far fa-user dark-text"></i>
@@ -87,7 +87,7 @@
                         </div>
                         <div class="d-flex flex-column">
                             <small>Cart</small>
-                            <span class="nav-total">$ {{ order.get_subtotal }}.00</span>
+                            <span class="nav-total">$ {{ order.get_subtotal }}</span>
                         </div>
                     </a>
                 </div>
