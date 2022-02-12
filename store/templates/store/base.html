@@ -71,15 +71,33 @@
                     </li>
                 </ul>
                 <div class="navbar-toolbar d-flex justify-content-between">
-                    <a href="{% url 'register' %}" class="navbar-tool d-flex align-items-center dark-text">
+                {% if user.is_authenticated %}
+                    <div class="dropdown navbar-tool d-flex align-items-center">
+                        <div class="dropdown-toggle d-flex align-items-center dark-text" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div class="navbar-tool-icon mr-3">
+                                <!-- <img src="{% static 'store/image/default.png' %}" alt="avt" class="navbar-img rounded-circle border mr-2"> -->
+                                <i class="far fa-user dark-text"></i>
+                            </div>
+                            <div class="navbar-tool-text d-flex flex-column">
+                                {{ user.username }}
+                            </div>
+                        </div>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Settings</a>
+                            <a class="dropdown-item" href="{% url 'logout' %}">Log out</a>
+                        </div>
+                  </div>
+                {% else %}
+                    <a href="{% url 'login' %}" class="navbar-tool d-flex align-items-center dark-text">
                         <div class="navbar-tool-icon mr-3">
                             <!-- <img src="{% static 'store/image/default.png' %}" alt="avt" class="navbar-img rounded-circle border mr-2"> -->
                             <i class="far fa-user dark-text"></i>
-                        </div>
+                        </div>                        
                         <div class="navbar-tool-text d-flex flex-column">
                             Login
                         </div>
                     </a>
+                {% endif %}
                     <a href="{% url 'cart' %}" class="navbar-tool dropdown d-flex align-items-center dark-text">
                         <div class="navbar-tool-icon mr-3 cart-icon rounded-circle">
                             <i class="fas fa-shopping-cart dark-text"></i>

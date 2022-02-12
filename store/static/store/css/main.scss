@@ -88,6 +88,13 @@ a:hover {
     background: #fff;
 }
 
+.dropdown-toggle {
+    cursor: pointer!important;
+}
+.dropdown-toggle::after {
+    display: none!important;
+}
+
 // header 
 .header {
     box-shadow: 0px 19px 3px -18px rgba(0,0,0,0.1);
@@ -194,12 +201,15 @@ footer {
         text-transform: uppercase;
         margin-bottom: 30px;
     }
-    &.register {
+    &.register, &.login {
         text-align: unset;
         padding: 60px 0;
         background: url('../image/slide_img.jpg');
         background-position: center;
         background-size: cover;
+    }
+    &.login {
+        padding-top: 140px;
     }
 }
 
