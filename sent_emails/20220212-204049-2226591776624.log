@@ -1,0 +1,25 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: Password reset on 127.0.0.1:8000
+From: webmaster@localhost
+To: thuynguyen.webdev@gmail.com
+Date: Sat, 12 Feb 2022 13:40:49 -0000
+Message-ID: <164467324996.10984.10644301221090751455@DESKTOP-PLG7HV2>
+
+
+You're receiving this email because you requested a password reset for your user account at 127.0.0.1:8000.
+
+Please go to the following page and choose a new password:
+
+http://127.0.0.1:8000/password_reset/MTQ/b0r2s1-9a8b21968f91e5caaf49b3673a27d204/
+
+Your username, in case you’ve forgotten: thuynguyen650
+
+Thanks for using our site!
+
+The 127.0.0.1:8000 team
+
+
+
+-------------------------------------------------------------------------------
